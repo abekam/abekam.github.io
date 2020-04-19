@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Abe Kamel</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/ernie.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script type="text/javascript" src="assets/js/ernie.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+
+</head>
+
+<body class="pre-load" onload="chathide()">
+
+  <div id="wrapper">
+
+    <header id="header">
+            <div class="inner">
+              <!-- Logo -->
+              
+                <nav>
+                  <ul>
+                    <li>              <a href="hpt.html" class="button"> <i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a></li>
+                    <li><a href="#menu">SideMenu</a></li>
+                  </ul>
+                  <ul><li></li></ul>
+                </nav>
+
+            </div>
+          </header>
+          <nav id="menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About me</a></li>
+              <li><a href="hpt.html">Human Performance Technology</a></li>
+              <li><a href="other.html">Other projects</a></li>
+                            <li>
+                               <ul class="icons">
+                            <li></li>
+                               <li>
+                                 <a href="https://www.linkedin.com/in/abek/" alt="linkedIn" i class="fab fa-linkedin-in">
+                                   
+                                 </a> 
+                                
+                                 </li>
+                                 <li><a href="mailto:abekammel@gmail.com" i class="far fa-envelope"> 
+                                   <!-- <a href="mailto:abekamel@gmail.com?subject=Hello Abe&body=Body-goes-here">Email Us</a>
+              -->
+                                 </a>
+                               </li>
+                             
+
+                               </ul>
+              </li>
+               
+            </ul>
+          </nav>
+<div id="main" >
+<div class="inner">
+  <H1>Ernie</H1>
+  <p> <em>     Helga</em> is the latest addition to the GLM sales contact center. Like many of the new employees , she is<strong> overwhelmed </strong>  with new information about the <strong> company's processes and products</strong> . Usually, if Helga has trouble on a call, she gets a bit nervous and puts the client on hold and reaches out to her supervisor. 
+    <br>Here comes Ernie!  <STRONG>An interactive chatbot</STRONG> that acts as a first line <strong>helper for newly hired employees</strong>. Helga can now chat with Ernie and easily find answers to her questions instead of interrupting the work flow. Ernie's keyword-based module helps new employees <strong>build expertise </strong> and <strong> promotes independance</strong> by providing them with seamless access to searchable help and Q&A sections while they are dealing with clients.
+
+</p>
+
+    <div class="inner">
+      <div>
+<button class="button primary fit" id="erniebutton" onclick="togglechatmod()">Chat with Ernie now</button>
+     </div> 
+<br>
+      <div id="chatmod">
+
+<h3>Simulated environment</h3>
+
+       <div class="border border-dark" id="chat-context"></div>
+
+   </div>
+    </div>
+     
+    </div>
+</div>
+    <!-- Footer -->
+            <footer id="footer">
+              <div class="inner">
+                <section>
+                  <h2>Abe's Portfolio</h2>
+                </section>
+                <section>
+                  <h2>Contact me</h2>
+                  <ul class="icons">
+                 
+
+                  <li>
+                    <a href="https://www.linkedin.com/in/abek/" alt="linkedIn" i class="fab fa-linkedin-in">
+                      
+                    </a> 
+                   
+                    </li>
+                    <li><a href="mailto:abekammel@gmail.com" i class="far fa-envelope"> 
+                      <!-- <a href="mailto:abekamel@gmail.com?subject=Hello Abe&body=Body-goes-here">Email Us</a>
+ -->
+                    </a>
+                  </li>
+                
+
+                  </ul>
+                </section>
+              </div>
+            </footer>
+
+</div>
+<script type="text/javascript">
+
+function chathide() {
+  $("#chatmod").hide();
+}
+function chattstart(){
+
+var tags = [
+  {
+    type: "input",
+    tag: "radio",
+    name: "helpingsection",
+    "chat-msg": "Hi Helga, I can help you with the following... please choose a section",delay:2000,
+    
+    children: [{
+        value: "jQuery",
+        text: "Call Processes",
+      },
+      {
+        value: "Angular",
+        text: "Product Details",
+      },
+      {
+        value: "React",
+        text: "A friendly conversation",
+      }
+    ]
+
+  },
+  {
+    type: "msg",
+    "chat-msg": "Sounds good, I can help you with {{helpingsection}}...",
+    delay: 1250,
+    callback: function() {
+      var name = Chat.getData().name;
+      Chat.addTags([{
+        type: "input",
+        tag: "radio",
+        name: "tricked",
+        "chat-msg": "What's your REAL name???",
+        children: [{
+            value: true,
+            text: "jQuery"
+          },
+          {
+            value: false,
+            text: name
+          },
+          {
+            value: true,
+            text: "Script"
+          }
+        ],
+        success: function(data) {
+          var msg = data.tricked == 'true' ? "No chatbot for you, Mr. Voldemort!" : "{{helpingsection}}";
+
+          Chat.addTags([{
+            type: "msg",
+            "chat-msg": msg,
+            delay: 2000
+          }]);
+        }
+      }])
+    }
+  },
+  {
+    type: "input",
+    tag: "custom",
+    name: "customTag",
+    submitBarStyle: 'full-submit',
+    "chat-msg": "This is a basic custom tag. This one doesn't do much, but there is so much potential!",
+    renderer: customTagRender,
+    retriever: function() {
+      $('#custom-input').remove();
+      return {
+        data: window.customData,
+        friendly: "Custom inputs can return data, and a custom message to display from the user. That is what this message is."}
+    }
+  },
+  {
+    type: "msg",
+    "chat-msg": "Anyways, thanks for checking this out! There are more demos and docs on the <a href='https://github.com/WiFuchs/chatty'>Github repo</a>"
+  }
+];
+
+function customTagRender () {
+  $('#ui-control').prepend('<div id="custom-input">Custom input! clickable map or image</div>');
+
+  //This custom data would be set by user interaction in the real world
+  window.customData = "the possibilities are endless!";
+}
+
+$(document).ready(function() {
+  Chat.start($('#chat-context'), tags);
+});
+
+}
+
+function togglechatmod() {
+  var x = document.getElementById("chatmod");
+  var y = document.getElementById("erniebutton")
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    chattstart();
+    // y.style.display = "none";
+  } else {
+    x.style.display = "none";
+
+  }
+}
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
