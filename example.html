@@ -192,7 +192,7 @@ choseprocess()
         success: function(data) {
 if (data.productchoice == "zest") {
 
-msgg = "Zestene could be tricky"
+msgg = "Zestene could be tricky, visit this <a href='https://abekam.github.io/generic.html'> link </a> it will help"
 
            Chat.addTags([{
             type: "msg",
@@ -200,8 +200,8 @@ msgg = "Zestene could be tricky"
             delay: 2000
           }])
 
-}else if(data.firstchoice == "kale"){
-msgg = "Nice, KaleKale is my favorite product"
+}else if(data.productchoice == "kale"){
+msgg = "Nice, KaleKale is my favorite product, this <a href='https://abekam.github.io/generic.html'> product sheet </a> will answer your question "
 
            Chat.addTags([{
             type: "msg",
@@ -210,7 +210,7 @@ msgg = "Nice, KaleKale is my favorite product"
           }])}
   else {
 
-msgg = "great, lets get you on track with Cobalto"
+msgg = "great, lets get you on track with Cobalto, here is a link for you <a href='https://abekam.github.io/generic.html'> Cobalto WIKI</a>"
 
            Chat.addTags([{
             type: "msg",
