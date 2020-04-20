@@ -13,8 +13,9 @@
 
 
 #chat-context {
-  height: 60vh;
+  height: 70vh;
 }
+
 
 .chat-response.robot:after {
     content: "";
